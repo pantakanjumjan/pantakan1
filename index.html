@@ -1,0 +1,2399 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0c0f" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="EE สป69/16" />
+  <title>EE สป69/16 — แผนการเรียนและตารางสอน</title>
+  <link id="appleTouchIcon" rel="apple-touch-icon" sizes="512x512" href="" />
+  <link id="faviconLink" rel="icon" type="image/png" href="" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #07080a;
+      --surface: #111318;
+      --surface-2: #171a22;
+      --surface-3: #202430;
+      --line: rgba(245, 158, 11, 0.14);
+      --line-strong: rgba(245, 158, 11, 0.34);
+      --ink: #f8fafc;
+      --ink-sub: #a3adc2;
+      --ink-dim: #667085;
+      --accent: #f59e0b;
+      --accent-bright: #fbbf24;
+      --accent-soft: rgba(245, 158, 11, 0.16);
+      --accent-line: rgba(245, 158, 11, 0.48);
+      --warn: #eab308;
+      --warn-soft: rgba(234, 179, 8, 0.15);
+      --warn-line: rgba(234, 179, 8, 0.42);
+      --ok: #10b981;
+      --ok-soft: rgba(16, 185, 129, 0.15);
+      --ok-line: rgba(16, 185, 129, 0.42);
+      --err: #ef4444;
+      --err-soft: rgba(239, 68, 68, 0.16);
+      --err-line: rgba(239, 68, 68, 0.46);
+      --sans: 'IBM Plex Sans Thai', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+      --top-inset: env(safe-area-inset-top, 0px);
+      --bot-inset: env(safe-area-inset-bottom, 0px);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background:
+        linear-gradient(90deg, rgba(245, 158, 11, 0.035) 1px, transparent 1px) 0 0 / 28px 28px,
+        linear-gradient(rgba(245, 158, 11, 0.035) 1px, transparent 1px) 0 0 / 28px 28px,
+        radial-gradient(circle at 50% -8%, rgba(245, 158, 11, 0.18), transparent 52%),
+        var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overscroll-behavior-y: none;
+    }
+
+    body {
+      padding-bottom: calc(84px + var(--bot-inset));
+    }
+
+    .mono { font-family: var(--mono); }
+    .hidden { display: none !important; }
+    .ellipsis { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    /* Top Bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding-top: var(--top-inset);
+      background: rgba(7, 8, 10, 0.9);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--accent-line);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at 50% -10%, rgba(245, 158, 11, 0.09), transparent 55%), var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overscroll-behavior-y: none;
+    }
+
+    body {
+      padding-bottom: calc(84px + var(--bot-inset));
+    }
+
+    .mono { font-family: var(--mono); }
+    .hidden { display: none !important; }
+    .ellipsis { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    /* Top Bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding-top: var(--top-inset);
+      background: rgba(11, 12, 15, 0.86);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      background: linear-gradient(145deg, rgba(245, 158, 11, 0.22), rgba(245, 158, 11, 0.06));
+      border: 1px solid var(--accent-line);
+      color: var(--accent-bright);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.12);
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .brand-name {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .tag {
+      padding: 1px 7px;
+      border-radius: 6px;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-line);
+      color: var(--accent-bright);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .brand-meta {
+      margin: 1px 0 0;
+      font-size: 11px;
+      color: var(--ink-sub);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--line-strong);
+      background: var(--surface-2);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn:active { transform: scale(0.97); }
+    .btn:hover { background: var(--surface-3); border-color: rgba(255, 255, 255, 0.24); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-bright), var(--accent));
+      color: #0b0c0f;
+      border-color: var(--accent-bright);
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(245, 158, 11, 0.22);
+    }
+
+    .btn-primary:hover { background: linear-gradient(135deg, #fde047, var(--accent-bright)); }
+
+    .btn-danger {
+      background: var(--err-soft);
+      border-color: var(--err-line);
+      color: #fda4af;
+    }
+
+    .btn-sm {
+      padding: 6px 10px;
+      font-size: 11px;
+      border-radius: 8px;
+    }
+
+    .btn-block {
+      width: 100%;
+      padding: 12px;
+      font-size: 13px;
+    }
+
+    /* Layout */
+    .shell {
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 14px 16px;
+    }
+
+    .vstack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .vstack-sm {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card {
+      position: relative;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.025) 0%, rgba(255, 255, 255, 0) 42%), var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 14px 16px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    .card-highlight {
+      position: relative;
+      border-color: var(--accent-bright);
+      background:
+        repeating-linear-gradient(
+          -45deg,
+          rgba(245, 158, 11, 0.045),
+          rgba(245, 158, 11, 0.045) 8px,
+          transparent 8px,
+          transparent 16px
+        ),
+        linear-gradient(155deg, rgba(245, 158, 11, 0.2) 0%, var(--surface) 60%);
+      box-shadow: 0 12px 32px rgba(245, 158, 11, 0.16), inset 0 0 0 1px rgba(251, 191, 36, 0.15);
+    }
+
+    .card-highlight {
+      position: relative;
+      border-color: var(--accent-line);
+      background: linear-gradient(150deg, rgba(245, 158, 11, 0.13) 0%, var(--surface) 58%);
+      box-shadow: 0 10px 28px rgba(245, 158, 11, 0.08);
+    }
+
+    .row-between {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .row-start {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    /* Metrics */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: 1.38fr 1fr;
+      gap: 10px;
+    }
+
+    .ring-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .ring-box {
+      position: relative;
+      width: 62px;
+      height: 62px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .ring-box svg {
+      width: 62px;
+      height: 62px;
+      transform: rotate(-90deg);
+    }
+
+    .ring-val {
+      position: absolute;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent-bright);
+    }
+
+    .kpi-label {
+      font-size: 11px;
+      color: var(--ink-sub);
+    }
+
+    .kpi-num {
+      font-family: var(--mono);
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-top: 2px;
+    }
+
+    .kpi-sub {
+      font-size: 11px;
+      color: var(--ok);
+      margin-top: 2px;
+      font-weight: 500;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .stat-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 10px 11px;
+      text-align: left;
+      cursor: pointer;
+      transition: transform 0.12s ease, border-color 0.15s ease;
+    }
+
+    .stat-box:hover { border-color: var(--line-strong); }
+    .stat-box:active { transform: scale(0.97); }
+
+    .stat-num {
+      font-family: var(--mono);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .stat-name {
+      font-size: 11px;
+      color: var(--ink-sub);
+      margin-top: 4px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot-ok { background: var(--ok); box-shadow: 0 0 8px rgba(16, 185, 129, 0.5); }
+    .dot-warn { background: var(--warn); box-shadow: 0 0 8px rgba(250, 204, 21, 0.45); }
+    .dot-dim { background: var(--ink-dim); }
+    .dot-err { background: var(--err); box-shadow: 0 0 8px rgba(244, 63, 94, 0.45); }
+
+    /* Bar Chart */
+    .bars {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      height: 120px;
+      align-items: end;
+      margin-top: 10px;
+    }
+
+    .bar-col {
+      background: none;
+      border: none;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      cursor: pointer;
+    }
+
+    .bar-track {
+      width: 100%;
+      max-width: 34px;
+      height: 78px;
+      border-radius: 9px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 2px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      transition: border-color 0.15s ease;
+    }
+
+    .bar-col:hover .bar-track { border-color: var(--accent-line); }
+
+    /* Pills & Inputs */
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .pill-ok { background: var(--ok-soft); border: 1px solid var(--ok-line); color: #6ee7b7; }
+    .pill-warn { background: var(--warn-soft); border: 1px solid var(--warn-line); color: #fef08a; }
+    .pill-err { background: var(--err-soft); border: 1px solid var(--err-line); color: #fda4af; }
+    .pill-dim { background: var(--surface-2); border: 1px solid var(--line); color: var(--ink-sub); }
+    .pill-accent { background: var(--accent-soft); border: 1px solid var(--accent-line); color: var(--accent-bright); }
+
+    .input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 11px;
+      border: 1px solid var(--line-strong);
+      background: var(--surface);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    .input:focus { border-color: var(--accent); }
+
+    .chips {
+      display: flex;
+      gap: 7px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding-bottom: 2px;
+    }
+
+    .chips::-webkit-scrollbar { display: none; }
+
+    .chip {
+      padding: 6px 13px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink-sub);
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.14s ease;
+    }
+
+    .chip.active {
+      background: linear-gradient(135deg, var(--accent-bright), var(--accent));
+      color: #0b0c0f;
+      border-color: var(--accent-bright);
+      font-weight: 700;
+    }
+
+    /* Course & Teacher Cards */
+    .item-card {
+      position: relative;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 45%), var(--surface);
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--accent);
+      border-radius: 15px;
+      padding: 14px 15px;
+      cursor: pointer;
+      transition: transform 0.12s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.38);
+    }
+
+    .item-card:hover {
+      border-color: var(--accent-line);
+      border-left-color: var(--accent-bright);
+      box-shadow: 0 10px 26px rgba(245, 158, 11, 0.12);
+    }
+    .item-card:active { transform: scale(0.99); }
+
+    .item-foot {
+      margin-top: 11px;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--ink-sub);
+    }
+
+    .meta-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--ink-sub);
+      margin-top: 3px;
+    }
+
+    .meta-line.primary {
+      color: var(--accent-bright);
+      font-weight: 600;
+    }
+
+    .avatar-lg {
+      width: 82px;
+      height: 82px;
+      border-radius: 15px;
+      object-fit: cover;
+      object-position: top center;
+      border: 1.5px solid var(--accent-line);
+      background: var(--surface-3);
+      display: block;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    }
+
+    .avatar-pair {
+      width: 66px;
+      height: 66px;
+      border-radius: 13px;
+      object-fit: cover;
+      object-position: top center;
+      border: 1.5px solid var(--accent-line);
+      background: var(--surface-3);
+      display: block;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+    }
+
+    .avatar-md {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      object-fit: cover;
+      object-position: top center;
+      border: 1px solid var(--line-strong);
+      background: var(--surface-3);
+      flex-shrink: 0;
+    }
+
+    .avatar-sm {
+      width: 48px;
+      height: 48px;
+      border-radius: 11px;
+      object-fit: cover;
+      object-position: top center;
+      border: 1px solid var(--accent-line);
+    }
+
+    .avatar-btn {
+      position: relative;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .cam-dot {
+      position: absolute;
+      right: -4px;
+      bottom: -4px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--surface-2);
+      border: 1px solid var(--accent-line);
+      color: var(--accent-bright);
+      display: grid;
+      place-items: center;
+    }
+
+    .cycle-btn {
+      width: 24px;
+      height: 24px;
+      border-radius: 7px;
+      background: var(--bg);
+      border: 1px solid var(--line-strong);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      cursor: pointer;
+    }
+
+    .banner-info {
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--ink-sub);
+    }
+
+    .holiday-box {
+      padding: 13px 15px;
+      border-radius: 14px;
+      background: var(--err-soft);
+      border: 1px solid var(--err-line);
+      font-size: 12px;
+      color: #fecdd3;
+    }
+
+    .holiday-box ul {
+      margin: 6px 0 0;
+      padding-left: 18px;
+    }
+
+    /* Accordion */
+    .accordion-head {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 13px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: inherit;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .accordion-body {
+      border-top: 1px solid var(--line);
+      padding: 10px 12px;
+      background: var(--bg);
+      max-height: 260px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .transfer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    /* Bottom Tab Bar */
+    .tabbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      padding-bottom: var(--bot-inset);
+      background: rgba(11, 12, 15, 0.92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-top: 1px solid var(--line);
+    }
+
+    .tabbar-grid {
+      max-width: 540px;
+      margin: 0 auto;
+      height: 62px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .tab {
+      background: none;
+      border: none;
+      color: var(--ink-dim);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: color 0.15s ease;
+    }
+
+    .tab.active {
+      color: var(--accent-bright);
+    }
+
+    /* Sheet & Dialog */
+    .backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .sheet {
+      max-width: 540px;
+      width: 100%;
+      margin: 0 auto;
+      background: var(--surface);
+      border-top: 1px solid var(--line-strong);
+      border-radius: 22px 22px 0 0;
+      padding: 18px 16px calc(22px + var(--bot-inset));
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--ink-sub);
+      margin-bottom: 5px;
+    }
+
+    .seg-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .seg-btn {
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      color: var(--ink-sub);
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .seg-btn.active {
+      border-color: var(--accent-bright);
+      background: var(--surface-3);
+      color: var(--ink);
+    }
+
+    .grade-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+    }
+
+    .grade-chip {
+      padding: 8px 0;
+      border-radius: 9px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .grade-chip.active {
+      background: var(--ok);
+      border-color: var(--ok);
+      color: #052e16;
+    }
+
+    .toast {
+      position: fixed;
+      top: calc(14px + var(--top-inset));
+      left: 50%;
+      transform: translate(-50%, -14px);
+      z-index: 50;
+      background: var(--surface-3);
+      border: 1px solid var(--accent-line);
+      color: var(--ink);
+      padding: 8px 15px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      white-space: nowrap;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+        </div>
+        <div style="min-width: 0;">
+          <div class="brand-row">
+            <h1 class="brand-name ellipsis">เทคโนโลยีไฟฟ้า</h1>
+            <span class="tag">สป69/16</span>
+          </div>
+          <p class="brand-meta ellipsis">มรภ.ธนบุรี (สมุทรปราการ) • ภาคพิเศษวันอาทิตย์</p>
+        </div>
+      </div>
+
+      <button class="btn" data-action="tab" data-tab="schedule">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
+          <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        <span>ตารางเรียน</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <!-- OVERVIEW -->
+    <section id="view-dashboard" class="vstack">
+      <div class="kpi-grid">
+        <div class="card ring-row">
+          <div class="ring-box">
+            <svg viewBox="0 0 60 60">
+              <circle cx="30" cy="30" r="24" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="5.5"></circle>
+              <circle id="ringArc" cx="30" cy="30" r="24" fill="none" stroke="#f59e0b" stroke-width="5.5" stroke-linecap="round" stroke-dasharray="150.8" stroke-dashoffset="84" style="transition: stroke-dashoffset 0.4s ease;"></circle>
+            </svg>
+            <span id="ringPct" class="ring-val">44%</span>
+          </div>
+          <div style="min-width: 0;">
+            <div class="kpi-label">หน่วยกิตสะสม</div>
+            <div class="kpi-num"><span id="kpiEarned">54</span><span style="font-size: 13px; color: var(--ink-dim); font-weight: 500;">/122</span></div>
+            <div class="kpi-sub ellipsis">เทียบโอน 51 + ผ่าน <span id="kpiPassedCr">3</span></div>
+          </div>
+        </div>
+
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div class="row-between">
+            <span class="kpi-label">GPAX สะสม</span>
+            <span class="mono" style="font-size: 10px; color: var(--ink-dim);">4.00</span>
+          </div>
+          <div id="kpiGpax" class="kpi-num" style="font-size: 25px;">4.00</div>
+          <div class="kpi-label">คำนวณจาก <span id="kpiGraded" class="mono" style="color: var(--ink);">1</span> วิชา</div>
+        </div>
+      </div>
+
+      <div id="focusCard" class="card card-highlight"></div>
+
+      <div class="stats-row">
+        <button class="stat-box" data-action="filter-status" data-status="passed">
+          <div class="row-between"><span class="dot dot-ok"></span><span id="cntPass" class="stat-num">1</span></div>
+          <div class="stat-name">ผ่านแล้ว</div>
+        </button>
+        <button class="stat-box" data-action="filter-status" data-status="studying">
+          <div class="row-between"><span class="dot dot-warn"></span><span id="cntStudy" class="stat-num">3</span></div>
+          <div class="stat-name">กำลังเรียน</div>
+        </button>
+        <button class="stat-box" data-action="filter-status" data-status="not_started">
+          <div class="row-between"><span class="dot dot-dim"></span><span id="cntIdle" class="stat-num">26</span></div>
+          <div class="stat-name">ยังไม่เรียน</div>
+        </button>
+        <button class="stat-box" data-action="filter-status" data-status="failed">
+          <div class="row-between"><span class="dot dot-err"></span><span id="cntFail" class="stat-num">0</span></div>
+          <div class="stat-name">ไม่ผ่าน/W</div>
+        </button>
+      </div>
+
+      <div class="card">
+        <div class="row-between">
+          <span style="font-size: 12px; font-weight: 700;">ความคืบหน้ารายภาคเรียน (7 เทอม)</span>
+          <span style="font-size: 11px; color: var(--ink-dim);">แตะแท่งเพื่อดูวิชา</span>
+        </div>
+        <div id="termBars" class="bars"></div>
+      </div>
+
+      <div class="card" style="padding: 0; overflow: hidden;">
+        <button class="accordion-head" data-action="toggle-transfer">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span class="tag" style="padding: 4px 8px; font-size: 12px;">51</span>
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span id="mCode" class="mono" style="font-size: 13px; font-weight: 700; color: #fbbf24;"></span>
+                <span id="mDetail" class="mono" style="font-size: 11px; color: var(--ink-sub);"></span>
+              </div>
+              <h3 id="mName" style="margin: 2px 0 0; font-size: 16px; font-weight: 700;"></h3>
+            </div>
+          </div>
+          <svg id="transferChevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s ease;">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div id="transferBody" class="accordion-body hidden"></div>
+      </div>
+
+      <div class="card">
+        <div class="row-between" style="margin-bottom: 10px;">
+          <span style="font-size: 12px; font-weight: 700;">จัดการข้อมูลในเครื่อง</span>
+          <span class="mono" style="font-size: 10px; color: var(--ink-dim);">JSON</span>
+        </div>
+        <div class="grid-3">
+          <button class="btn btn-sm" data-action="export-json">สำรองข้อมูล</button>
+          <button class="btn btn-sm" data-action="import-json">กู้คืนไฟล์</button>
+          <button class="btn btn-sm btn-danger" data-action="open-reset">รีเซ็ตค่า</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDY PLAN -->
+    <section id="view-plan" class="vstack hidden">
+      <input type="text" id="searchBox" class="input" placeholder="ค้นหารหัสวิชา, ชื่อวิชา หรือชื่ออาจารย์..." />
+      <div id="termChips" class="chips"></div>
+      <div id="statusChips" class="chips">
+        <button class="chip active" data-action="set-status" data-status="all">ทั้งหมด (30)</button>
+        <button class="chip" data-action="set-status" data-status="passed">ผ่านแล้ว</button>
+        <button class="chip" data-action="set-status" data-status="studying">กำลังเรียน/รอเกรด</button>
+        <button class="chip" data-action="set-status" data-status="not_started">ยังไม่เรียน</button>
+        <button class="chip" data-action="set-status" data-status="failed">ไม่ผ่าน/W</button>
+      </div>
+      <div id="planContainer" class="vstack"></div>
+    </section>
+
+    <!-- SUNDAY SCHEDULE -->
+    <section id="view-schedule" class="vstack hidden">
+      <div class="card row-between" style="align-items: flex-end; gap: 10px;">
+        <div style="flex: 1; min-width: 0;">
+          <label class="label" for="termSelect">ภาคเรียน (Block Course วันอาทิตย์)</label>
+          <select id="termSelect" class="input" style="font-weight: 600;">
+            <option value="2569-1">เทอม 1/2569 (รุ่น สป69/16)</option>
+            <option value="2569-2">เทอม 2/2569 (รุ่น สป69/16)</option>
+            <option value="2569-3">เทอม 3/2569</option>
+            <option value="2570-1">เทอม 1/2570</option>
+            <option value="2570-2">เทอม 2/2570</option>
+            <option value="2570-3">เทอม 3/2570</option>
+            <option value="2571-1">เทอม 1/2571</option>
+          </select>
+        </div>
+        <button id="pngBtn" class="btn btn-primary" data-action="export-png" style="padding: 10px 14px; flex-shrink: 0;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>บันทึกรูป PNG</span>
+        </button>
+      </div>
+
+      <div class="banner-info">
+        <span>เรียนวันอาทิตย์เต็มวัน • พักกลางวัน 12:00 – 13:00 น.</span>
+        <span class="mono" style="color: var(--ink); font-weight: 600;">สป13-302</span>
+      </div>
+
+      <div id="scheduleList" class="vstack"></div>
+      <div id="holidayPanel"></div>
+    </section>
+
+    <!-- FACULTY -->
+    <section id="view-teachers" class="vstack hidden">
+      <div class="card">
+        <div class="row-between" style="align-items: flex-start;">
+          <div>
+            <h2 style="margin: 0; font-size: 15px; font-weight: 700;">อาจารย์ผู้สอน (10 ท่าน)</h2>
+            <p style="margin: 3px 0 0; font-size: 12px; color: var(--ink-sub);">วางไฟล์ <span class="mono" style="color: var(--ink);">t1.jpg – t10.jpg</span> คู่กับ <span class="mono" style="color: var(--ink);">index.html</span> หรือแตะเปลี่ยนรูป</p>
+          </div>
+          <span class="tag">10 ท่าน</span>
+        </div>
+
+        <div class="grid-3" style="margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line);">
+          <button class="btn btn-sm" data-action="recover-photos">กู้รูปเดิม</button>
+          <button class="btn btn-sm" data-action="export-json">สำรองข้อมูล</button>
+          <button class="btn btn-sm" data-action="import-json">กู้คืนไฟล์</button>
+        </div>
+      </div>
+
+      <div id="facultyList" class="vstack-sm"></div>
+
+      <div class="card row-between">
+        <div style="display: flex; align-items: center; gap: 12px; min-width: 0;">
+          <img id="iconPreview" src="" alt="App Icon" style="width: 50px; height: 50px; border-radius: 12px; border: 1px solid var(--line-strong); flex-shrink: 0;" />
+          <div style="min-width: 0;">
+            <div style="font-size: 13px; font-weight: 700;">ไอคอนหน้าจอโฮม iPhone</div>
+            <div style="font-size: 11px; color: var(--ink-sub);">Safari → แชร์ → เพิ่มไปยังหน้าจอโฮม</div>
+          </div>
+        </div>
+        <button class="btn btn-sm" data-action="save-icon" style="flex-shrink: 0;">โหลดไอคอน</button>
+      </div>
+    </section>
+
+  </main>
+
+  <nav class="tabbar">
+    <div class="tabbar-grid">
+      <button class="tab active" data-action="tab" data-tab="dashboard">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+          <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+          <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+          <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+        </svg>
+        <span>ภาพรวม</span>
+      </button>
+
+      <button class="tab" data-action="tab" data-tab="plan">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+        <span>แผนเรียน</span>
+      </button>
+
+      <button class="tab" data-action="tab" data-tab="schedule">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        <span>ตารางอาทิตย์</span>
+      </button>
+
+      <button class="tab" data-action="tab" data-tab="teachers">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        <span>อาจารย์</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Edit Sheet -->
+  <div id="editModal" class="backdrop hidden" data-action="close-modal-bg">
+    <div class="sheet vstack">
+      <div class="row-start">
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span id="mCode" class="mono" style="font-size: 13px; font-weight: 700; color: #93c5fd;"></span>
+            <span id="mDetail" class="mono" style="font-size: 11px; color: var(--ink-sub);"></span>
+          </div>
+          <h3 id="mName" style="margin: 2px 0 0; font-size: 16px; font-weight: 700;"></h3>
+        </div>
+        <button class="btn btn-sm" data-action="close-modal" style="border-radius: 50%; width: 30px; height: 30px; padding: 0;">✕</button>
+      </div>
+
+      <div>
+        <label class="label">สถานะรายวิชา</label>
+        <div id="mStatusGrid" class="seg-grid">
+          <button type="button" class="seg-btn" data-action="pick-status" data-status="not_started"><span class="dot dot-dim"></span>ยังไม่เรียน</button>
+          <button type="button" class="seg-btn" data-action="pick-status" data-status="studying"><span class="dot dot-warn"></span>กำลังเรียน / รอเกรด</button>
+          <button type="button" class="seg-btn" data-action="pick-status" data-status="passed"><span class="dot dot-ok"></span>เรียนผ่านแล้ว</button>
+          <button type="button" class="seg-btn" data-action="pick-status" data-status="failed"><span class="dot dot-err"></span>ไม่ผ่าน / ดรอป (W)</button>
+        </div>
+      </div>
+
+      <div id="mGradeBox" class="hidden">
+        <label class="label">ผลการเรียน (เกรด)</label>
+        <div id="mGradeRow" class="grade-row"></div>
+      </div>
+
+      <div class="vstack-sm" style="border-top: 1px solid var(--line); padding-top: 12px;">
+        <span style="font-size: 12px; font-weight: 700;">รายละเอียดตารางเรียน</span>
+
+        <div>
+          <label class="label">วันอาทิตย์ที่เรียน</label>
+          <input type="text" id="fDates" class="input" placeholder="เช่น 8, 15, 22, 29 พ.ย. / 13, 20 ธ.ค. 69" />
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <label class="label">เวลาเริ่ม</label>
+            <input type="time" id="fStart" class="input mono" />
+          </div>
+          <div>
+            <label class="label">เวลาเลิก</label>
+            <input type="time" id="fEnd" class="input mono" />
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <label class="label">ห้องเรียน</label>
+            <input type="text" id="fRoom" class="input" placeholder="สป13-302" />
+          </div>
+          <div>
+            <label class="label">หมู่เรียน</label>
+            <input type="text" id="fSection" class="input" placeholder="หมู่ 30" />
+          </div>
+        </div>
+
+        <div>
+          <label class="label">อาจารย์ผู้สอน</label>
+          <input type="text" id="fInstructor" class="input" />
+        </div>
+
+        <div>
+          <label class="label">หมายเหตุ</label>
+          <input type="text" id="fNote" class="input" />
+        </div>
+
+        <div id="mTeacherBox"></div>
+      </div>
+
+      <button class="btn btn-primary btn-block" data-action="save-modal">บันทึกข้อมูล</button>
+    </div>
+  </div>
+
+  <!-- Reset Confirm -->
+  <div id="resetModal" class="backdrop hidden" style="justify-content: center; padding: 16px;">
+    <div class="card" style="max-width: 360px; width: 100%; margin: 0 auto; border-color: var(--line-strong);">
+      <h3 style="margin: 0; font-size: 15px; font-weight: 700;">รีเซ็ตข้อมูลกลับเป็นค่าเริ่มต้น?</h3>
+      <p style="margin: 8px 0 16px; font-size: 12px; color: var(--ink-sub);">สถานะรายวิชา เกรด และตารางเรียนจะกลับเป็นค่าตั้งต้นของรุ่น สป69/16</p>
+      <div class="grid-2">
+        <button class="btn" data-action="close-reset">ยกเลิก</button>
+        <button class="btn btn-danger" style="background: var(--err); color: #fff; border: none;" data-action="do-reset">ยืนยัน</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <canvas id="pngCanvas" class="hidden"></canvas>
+  <input type="file" id="imgInput" accept="image/*" class="hidden" />
+  <input type="file" id="jsonInput" accept=".json,application/json" class="hidden" />
+
+  <script>
+    (() => {
+      'use strict';
+
+      const STORE_KEY = 'ee_sp69_16_state_v4';
+      const TERMS = ['2569-1', '2569-2', '2569-3', '2570-1', '2570-2', '2570-3', '2571-1'];
+      const POINTS = { 'A': 4.0, 'B+': 3.5, 'B': 3.0, 'C+': 2.5, 'C': 2.0, 'D+': 1.5, 'D': 1.0, 'F': 0.0 };
+
+      function avatarSvg(initials, bg) {
+        const xml = `<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+          <rect width="240" height="240" fill="${bg}"/>
+          <circle cx="120" cy="88" r="40" fill="rgba(255,255,255,0.14)"/>
+          <path d="M54 224c6-40 36-62 66-62s60 22 66 62" fill="rgba(255,255,255,0.12)"/>
+          <text x="120" y="134" font-family="sans-serif" font-size="52" font-weight="700" fill="#ffffff" text-anchor="middle">${initials}</text>
+        </svg>`;
+        return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(xml);
+      }
+
+      const FACULTY = [
+        { id: 't1', file: 't1', name: 'อ.ชาญฉจิต วรรณนุรักษ์', role: 'อาจารย์ที่ปรึกษา / เทคโนโลยีไฟฟ้า', svg: avatarSvg('ชจ', '#1e3a8a') },
+        { id: 't2', file: 't2', name: 'ผศ. ว่าที่ร้อยตรี ดร.ธเนศ เกตุทอง', role: 'วิชาศึกษาทั่วไป', svg: avatarSvg('ธน', '#065f46') },
+        { id: 't3', file: 't3', name: 'อ.เพ็ญพิสุทธิ์ ศิริ', role: 'ภาษาอังกฤษ', svg: avatarSvg('พพ', '#92400e') },
+        { id: 't4', file: 't4', name: 'อ. ดร.น้ำอ้อย สุขเสนา', role: 'วิชาศึกษาทั่วไป', svg: avatarSvg('นอ', '#581c87') },
+        { id: 't5', file: 't5', name: 'ผศ.ธวัชชัย สอนสนาม', role: 'เทคโนโลยีไฟฟ้า', svg: avatarSvg('ธช', '#075985') },
+        { id: 't6', file: 't6', name: 'ผศ.สถาพร จำรัสเลิศลักษณ์', role: 'เทคโนโลยีไฟฟ้า', svg: avatarSvg('สถ', '#312e81') },
+        { id: 't7', file: 't7', name: 'อ.วรรณพร จิตรสังวรณ์', role: 'เทคโนโลยีดิจิทัล', svg: avatarSvg('วพ', '#831843') },
+        { id: 't8', file: 't8', name: 'อ.พิชามญช์ บุญช่วย', role: 'ภาษาอังกฤษ', svg: avatarSvg('พช', '#115e59') },
+        { id: 't9', file: 't9', name: 'อ.ประยุทธ นิสภกุล', role: 'เทคโนโลยีไฟฟ้า', svg: avatarSvg('ปย', '#7f1d1d') },
+        { id: 't10', file: 't10', name: 'อ.วงจันทร์ นุ่นคง', role: 'ภาษาอังกฤษอุตสาหกรรม', svg: avatarSvg('วจ', '#4c1d95') }
+      ];
+
+      const COURSE_TEACHERS = {
+        '1000000': ['t1'],
+        '0663002': ['t2'],
+        '0661002': ['t3'],
+        '0662001': ['t4'],
+        '5105302': ['t5', 't6'],
+        '0663001': ['t7'],
+        '0661004': ['t8'],
+        '5104316': ['t1', 't9'],
+        '5206223': ['t10']
+      };
+
+      const TRANSFERRED = [
+        { code: '0661001', name: 'ภาษาไทยเพื่อการสื่อสาร', credits: 3, detail: '3 (3-0-6)' },
+        { code: '0661003', name: 'ภาษาอังกฤษเพื่อการสื่อสารในงานอาชีพ', credits: 3, detail: '3 (3-0-6)' },
+        { code: '0662002', name: 'พลเมืองไทยและพลเมืองโลก', credits: 3, detail: '3 (3-0-6)' },
+        { code: '0662003', name: 'สุนทรียภาพและกีฬาเพื่อคุณภาพชีวิต', credits: 3, detail: '3 (2-2-5)' },
+        { code: '0663003', name: 'วิทยาศาสตร์และเทคโนโลยีเพื่อคุณภาพชีวิต', credits: 3, detail: '3 (2-2-5)' },
+        { code: '0664001', name: 'การคิดและการตัดสินใจ', credits: 3, detail: '3 (3-0-6)' },
+        { code: '5101101', name: 'คณิตศาสตร์วิศวกรรม 1', credits: 3, detail: '3 (3-0-6)' },
+        { code: '5101102', name: 'ฟิสิกส์วิศวกรรม', credits: 3, detail: '3 (2-2-5)' },
+        { code: '5101103', name: 'เขียนแบบวิศวกรรม', credits: 3, detail: '3 (2-2-5)' },
+        { code: '5101104', name: 'วัสดุวิศวกรรม', credits: 3, detail: '3 (3-0-6)' },
+        { code: '5104101', name: 'วงจรไฟฟ้ากระแสตรง', credits: 3, detail: '3 (2-2-5)' },
+        { code: '5104102', name: 'วงจรไฟฟ้ากระแสสลับ', credits: 3, detail: '3 (2-2-5)' },
+        { code: '5104201', name: 'เครื่องวัดและเครื่องมือวัดทางไฟฟ้า', credits: 3, detail: '3 (2-2-5)' },
+        { code: '5104202', name: 'การส่งและจ่ายกำลังไฟฟ้า', credits: 3, detail: '3 (3-0-6)' },
+        { code: '5104203', name: 'เครื่องกลไฟฟ้ากระแสตรงและหม้อแปลง', credits: 3, detail: '3 (3-0-6)' },
+        { code: '5104204', name: 'เครื่องกลไฟฟ้ากระแสสลับ', credits: 3, detail: '3 (3-0-6)' },
+        { code: '5104205', name: 'ระบบป้องกันทางไฟฟ้า', credits: 2, detail: '2 (2-0-4)' },
+        { code: '5104206', name: 'ความปลอดภัยในงานไฟฟ้าอุตสาหกรรม', credits: 1, detail: '1 (1-0-2)' }
+      ];
+
+      const CURRICULUM = [
+        { year: '2569', term: '1', code: '1000000', name: 'พบอาจารย์ที่ปรึกษาและกิจกรรมเสริมหลักสูตร', credits: 0, detail: '0 (0-2-0)' },
+        { year: '2569', term: '1', code: '0663002', name: 'วิศวกรสังคม', credits: 3, detail: '3 (2-2-5)' },
+        { year: '2569', term: '1', code: '0661002', name: 'ภาษาอังกฤษเพื่อการสื่อสาร', credits: 3, detail: '3 (3-0-6)' },
+        { year: '2569', term: '1', code: '0662001', name: 'ชีวิตวิถีใหม่', credits: 3, detail: '3 (3-0-6)' },
+        { year: '2569', term: '1', code: '5105302', name: 'อิเล็กทรอนิกส์อุตสาหกรรม', credits: 3, detail: '3 (2-2-5)' },
+
+        { year: '2569', term: '2', code: '0663001', name: 'ทักษะความเข้าใจและใช้เทคโนโลยีดิจิทัล', credits: 3, detail: '3 (2-2-5)' },
+        { year: '2569', term: '2', code: '0661004', name: 'ภาษาอังกฤษเพื่อการพัฒนาคุณภาพชีวิต', credits: 3, detail: '3 (3-0-6)' },
+        { year: '2569', term: '2', code: '5104316', name: 'การส่องสว่างและการประยุกต์ใช้งาน', credits: 3, detail: '3 (2-2-5)' },
+        { year: '2569', term: '2', code: '5206223', name: 'ภาษาอังกฤษในงานอุตสาหกรรม', credits: 3, detail: '3 (2-2-5)' },
+
+        { year: '2569', term: '3', code: '5206506', name: 'ทักษะการอ่านภาษาอังกฤษในงานอุตสาหกรรม', credits: 3, detail: '3 (2-2-5)' },
+        { year: '2569', term: '3', code: '5104435', name: 'การออกแบบและประมาณการติดตั้งระบบไฟฟ้า', credits: 3, detail: '3 (3-0-6)' },
+        { year: '2569', term: '3', code: '5104319', name: 'การวัดและการควบคุมทางอุตสาหกรรม', credits: 3, detail: '3 (2-2-5)' },
+
+        { year: '2570', term: '1', code: '5104314', name: 'การควบคุมมอเตอร์ไฟฟ้า', credits: 1, detail: '1 (1-0-2)' },
+        { year: '2570', term: '1', code: '5104315', name: 'ปฏิบัติการควบคุมมอเตอร์ไฟฟ้า', credits: 2, detail: '2 (0-4-2)' },
+        { year: '2570', term: '1', code: '5104433', name: 'ระบบเครื่องทำความเย็นและเครื่องปรับอากาศ', credits: 1, detail: '1 (1-0-2)' },
+        { year: '2570', term: '1', code: '5104434', name: 'ปฏิบัติการระบบเครื่องทำความเย็นและเครื่องปรับอากาศ', credits: 2, detail: '2 (0-4-2)' },
+        { year: '2570', term: '1', code: '5104320', name: 'การเขียนโปรแกรมไมโครโปรเซสเซอร์และไมโครคอนโทรลเลอร์', credits: 3, detail: '3 (2-2-5)' },
+        { year: '2570', term: '1', code: '5104321', name: 'นิวเมติกส์และไฮดรอลิกส์', credits: 3, detail: '3 (2-2-5)' },
+
+        { year: '2570', term: '2', code: '5104317', name: 'โปรแกรมเมเบิลลอจิกคอนโทรลเลอร์และการควบคุมอัตโนมัติ', credits: 1, detail: '1 (1-0-2)' },
+        { year: '2570', term: '2', code: '5104318', name: 'ปฏิบัติการโปรแกรมเมเบิลลอจิกคอนโทรลเลอร์และการควบคุมอัตโนมัติ', credits: 2, detail: '2 (0-4-2)' },
+        { year: '2570', term: '2', code: '5104442', name: 'ระบบโซล่าเซลล์และพลังงานไฟฟ้า', credits: 3, detail: '3 (2-2-5)' },
+        { year: '2570', term: '2', code: '5104438', name: 'โครงงานพิเศษเทคโนโลยีไฟฟ้า', credits: 3, detail: '3 (0-6-3)' },
+        { year: '2570', term: '2', code: '5104437', name: 'สัมมนาทางเทคโนโลยีไฟฟ้า', credits: 1, detail: '1 (0-2-1)' },
+        { year: '2570', term: '2', code: '5104439', name: 'เตรียมสหกิจศึกษาด้านเทคโนโลยีไฟฟ้า', credits: 1, detail: '1 (0-0-45)' },
+
+        { year: '2570', term: '3', code: '5104440', name: 'สหกิจศึกษาด้านเทคโนโลยีไฟฟ้า', credits: 6, detail: '6 (0-0-16)' },
+
+        { year: '2571', term: '1', code: '5104210', name: 'การติดตั้งไฟฟ้าภายในและภายนอกอาคาร', credits: 1, detail: '1 (1-0-2)' },
+        { year: '2571', term: '1', code: '5104211', name: 'ปฏิบัติการติดตั้งไฟฟ้าภายในและภายนอกอาคาร', credits: 2, detail: '2 (0-4-2)' },
+        { year: '2571', term: '1', code: '5104213', name: 'ปฏิบัติการเครื่องกลไฟฟ้ากระแสตรงและกระแสสลับ', credits: 3, detail: '3 (0-6-3)' },
+        { year: '2571', term: '1', code: '5105101', name: 'อุปกรณ์ไฟฟ้าและอิเล็กทรอนิกส์', credits: 1, detail: '1 (1-0-2)' },
+        { year: '2571', term: '1', code: '5105102', name: 'ปฏิบัติการอุปกรณ์ไฟฟ้าและอิเล็กทรอนิกส์', credits: 2, detail: '2 (0-4-2)' }
+      ];
+
+      const HOLIDAYS = {
+        '2569-1': [
+          'วันอาทิตย์ที่ 26 กรกฎาคม 2569 (วันอาสาฬหบูชา / เข้าพรรษา)',
+          'วันอาทิตย์ที่ 9 สิงหาคม 2569 (กิจกรรมวันแม่แห่งชาติ / งดเรียน)',
+          'วันอาทิตย์ที่ 25 ตุลาคม 2569 (วันปิยมหาราชชดเชย)'
+        ],
+        '2569-2': [
+          'วันอาทิตย์ที่ 6 ธันวาคม 2569 (วันพ่อแห่งชาติ)',
+          'วันอาทิตย์ที่ 3 มกราคม 2570 (เทศกาลปีใหม่)',
+          'วันอาทิตย์ที่ 21 กุมภาพันธ์ 2570 (วันมาฆบูชา)'
+        ]
+      };
+
+      let store = null;
+      const staticPhotos = {};
+      const nav = {
+        tab: 'dashboard',
+        term: 'all',
+        status: 'all',
+        editCode: null,
+        draftStatus: 'not_started',
+        draftGrade: 'A',
+        uploadId: null
+      };
+
+      const $ = id => document.getElementById(id);
+
+      function defaultStore() {
+        return {
+          statuses: {
+            '0663002': 'passed',
+            '0662001': 'studying',
+            '0661002': 'studying',
+            '5105302': 'studying'
+          },
+          grades: {
+            '0663002': 'A'
+          },
+          blocks: {
+            '1000000': {
+              dates: 'ตามนัดหมายอาจารย์ที่ปรึกษาตลอดภาคเรียน',
+              start: '12:00',
+              end: '13:00',
+              room: 'สป13-302',
+              section: 'หมู่ 30',
+              instructor: 'อ.ชาญฉจิต วรรณนุรักษ์',
+              note: 'กิจกรรมเสริมหลักสูตร'
+            },
+            '0663002': {
+              dates: '21, 28 มิ.ย. / 5, 12, 19 ก.ค. 69',
+              start: '07:00',
+              end: '19:00',
+              room: 'สป13-302',
+              section: 'หมู่ 30',
+              instructor: 'ผศ. ว่าที่ร้อยตรี ดร.ธเนศ เกตุทอง',
+              note: 'ออกเกรดแล้ว (A)'
+            },
+            '0661002': {
+              dates: '2, 16, 23, 30 ส.ค. / 6, 13 ก.ย. 69',
+              start: '07:00',
+              end: '18:00',
+              room: 'สป13-302',
+              section: 'หมู่ 30',
+              instructor: 'อ.เพ็ญพิสุทธิ์ ศิริ',
+              note: 'อาจารย์กำลังทำเกรด'
+            },
+            '0662001': {
+              dates: '20, 27 ก.ย. / 4, 11, 18 ต.ค. / 1 พ.ย. 69',
+              start: '07:00',
+              end: '18:00',
+              room: 'สป13-302',
+              section: 'หมู่ 30',
+              instructor: 'อ. ดร.น้ำอ้อย สุขเสนา',
+              note: 'อาจารย์กำลังส่งเกรด'
+            },
+            '5105302': {
+              dates: '8, 15, 22, 29 พ.ย. / 13, 20 ธ.ค. 69',
+              start: '07:00',
+              end: '19:00',
+              room: 'สป13-302',
+              section: 'หมู่ 30',
+              instructor: 'ผศ.ธวัชชัย สอนสนาม, ผศ.สถาพร จำรัสเลิศลักษณ์',
+              note: 'ชุดเรียนปัจจุบัน'
+            },
+            '0663001': {
+              dates: '10, 17, 24, 31 ม.ค. / 7, 14 ก.พ. 70',
+              start: '07:00',
+              end: '19:00',
+              room: 'สป13-302',
+              section: 'หมู่ 30',
+              instructor: 'อ.วรรณพร จิตรสังวรณ์',
+              note: 'ชุดที่ 1 เทอม 2/2569'
+            },
+            '0661004': {
+              dates: '28 ก.พ. / 7, 14, 21, 28 มี.ค. / 4 เม.ย. 70',
+              start: '07:00',
+              end: '18:00',
+              room: 'สป13-302',
+              section: 'หมู่ 30',
+              instructor: 'อ.พิชามญช์ บุญช่วย',
+              note: 'ชุดที่ 2 เทอม 2/2569'
+            },
+            '5104316': {
+              dates: '18, 25 เม.ย. / 2, 9, 16, 23 พ.ค. 70',
+              start: '07:00',
+              end: '19:00',
+              room: 'สป13-302',
+              section: 'หมู่ 30',
+              instructor: 'อ.ชาญฉจิต วรรณนุรักษ์, อ.ประยุทธ นิสภกุล',
+              note: 'ชุดที่ 3 เทอม 2/2569'
+            },
+            '5206223': {
+              dates: '30 พ.ค. / 6, 13, 20, 27 มิ.ย. / 4 ก.ค. 70',
+              start: '07:00',
+              end: '19:00',
+              room: 'สป13-302',
+              section: 'หมู่ 30',
+              instructor: 'อ.วงจันทร์ นุ่นคง',
+              note: 'ชุดที่ 4 เทอม 2/2569'
+            }
+          },
+          photos: {}
+        };
+      }
+
+      function save() {
+        try {
+          localStorage.setItem(STORE_KEY, JSON.stringify(store));
+        } catch (_) {}
+      }
+
+      function scanLegacyPhotos(showAlert = false) {
+        let count = 0;
+        try {
+          for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (!key || key === STORE_KEY) continue;
+            const raw = localStorage.getItem(key);
+            if (!raw || raw.indexOf('data:image') === -1) continue;
+            const parsed = JSON.parse(raw);
+            const pool = parsed.photos || parsed.teacherPhotos || parsed;
+            if (pool && typeof pool === 'object') {
+              FACULTY.forEach(f => {
+                const src = pool[f.id] || pool[f.name];
+                if (typeof src === 'string' && src.startsWith('data:image') && !store.photos[f.id]) {
+                  store.photos[f.id] = src;
+                  count++;
+                }
+              });
+            }
+          }
+          if (count > 0) {
+            save();
+            renderAll();
+          }
+        } catch (_) {}
+        if (showAlert) {
+          notify(count > 0 ? `กู้คืนรูปสำเร็จ ${count} ท่าน` : 'ไม่พบรูปเก่าเพิ่มเติมในเครื่อง');
+        }
+      }
+
+      function load() {
+        const base = defaultStore();
+        try {
+          const raw = localStorage.getItem(STORE_KEY);
+          if (raw) {
+            const parsed = JSON.parse(raw);
+            store = {
+              statuses: { ...base.statuses, ...(parsed.statuses || {}) },
+              grades: { ...base.grades, ...(parsed.grades || {}) },
+              blocks: { ...base.blocks, ...(parsed.blocks || {}) },
+              photos: parsed.photos || parsed.teacherPhotos || {}
+            };
+          } else {
+            store = base;
+          }
+        } catch (_) {
+          store = base;
+        }
+        scanLegacyPhotos(false);
+      }
+
+      function discoverProjectPhotos() {
+        const exts = ['jpg', 'png', 'jpeg', 'webp'];
+        FACULTY.forEach(f => {
+          let i = 0;
+          const next = () => {
+            if (i >= exts.length) return;
+            const url = `./${f.file}.${exts[i++]}`;
+            const img = new Image();
+            img.onload = () => {
+              staticPhotos[f.id] = url;
+              renderAll();
+            };
+            img.onerror = next;
+            img.src = url;
+          };
+          next();
+        });
+      }
+
+      function buildAppIcon() {
+        const c = document.createElement('canvas');
+        c.width = 512;
+        c.height = 512;
+        const ctx = c.getContext('2d');
+
+        const bg = ctx.createLinearGradient(0, 0, 512, 512);
+        bg.addColorStop(0, '#191c24');
+        bg.addColorStop(1, '#0b0c0f');
+        ctx.fillStyle = bg;
+        ctx.fillRect(0, 0, 512, 512);
+
+        const cardX = 80, cardY = 86, cardW = 352, cardH = 304, r = 34;
+        ctx.fillStyle = '#13151b';
+        ctx.beginPath();
+        ctx.roundRect(cardX, cardY, cardW, cardH, r);
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(245,158,11,0.35)';
+        ctx.lineWidth = 4;
+        ctx.stroke();
+
+        ctx.save();
+        ctx.beginPath();
+        ctx.roundRect(cardX, cardY, cardW, cardH, r);
+        ctx.clip();
+
+        const hdrGrad = ctx.createLinearGradient(cardX, cardY, cardX + cardW, cardY + 74);
+        hdrGrad.addColorStop(0, '#fbbf24');
+        hdrGrad.addColorStop(1, '#d97706');
+        ctx.fillStyle = hdrGrad;
+        ctx.fillRect(cardX, cardY, cardW, 74);
+
+        ctx.fillStyle = '#0b0c0f';
+        ctx.font = 'bold 28px "IBM Plex Sans Thai", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('ตารางเรียน', 256, cardY + 48);
+
+        const gx = cardX + 24, gy = cardY + 96, gap = 14;
+        const sw = (cardW - 48 - gap * 2) / 3;
+        const sh = (cardH - 118 - gap * 2) / 3;
+        const palette = [
+          ['#f59e0b', '#222631', '#10b981'],
+          ['#222631', '#facc15', '#222631'],
+          ['#10b981', '#222631', '#f59e0b']
+        ];
+
+        for (let row = 0; row < 3; row++) {
+          for (let col = 0; col < 3; col++) {
+            const x = gx + col * (sw + gap);
+            const y = gy + row * (sh + gap);
+            ctx.fillStyle = palette[row][col];
+            ctx.beginPath();
+            ctx.roundRect(x, y, sw, sh, 10);
+            ctx.fill();
+          }
+        }
+        ctx.restore();
+
+        [168, 326].forEach(rx => {
+          ctx.fillStyle = '#0b0c0f';
+          ctx.beginPath();
+          ctx.roundRect(rx - 4, cardY - 24, 26, 44, 12);
+          ctx.fill();
+          ctx.fillStyle = '#fbbf24';
+          ctx.beginPath();
+          ctx.roundRect(rx, cardY - 22, 18, 38, 8);
+          ctx.fill();
+        });
+
+        ctx.fillStyle = '#191c24';
+        ctx.strokeStyle = 'rgba(245,158,11,0.35)';
+        ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        ctx.roundRect(118, 412, 276, 50, 14);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = '#fbbf24';
+        ctx.font = 'bold 26px "JetBrains Mono", monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('EE • สป69/16', 256, 446);
+
+        const url = c.toDataURL('image/png');
+        $('appleTouchIcon').href = url;
+        $('faviconLink').href = url;
+        $('iconPreview').src = url;
+        window._iconUrl = url;
+      }
+
+      function notify(msg) {
+        const el = $('toast');
+        el.textContent = msg;
+        el.classList.add('show');
+        clearTimeout(notify._t);
+        notify._t = setTimeout(() => el.classList.remove('show'), 2200);
+      }
+
+      function findFaculty(id) {
+        return FACULTY.find(f => f.id === id) || null;
+      }
+
+      function photoMeta(id) {
+        if (store.photos && store.photos[id]) return { url: store.photos[id], kind: 'local' };
+        if (staticPhotos[id]) return { url: staticPhotos[id], kind: 'bundled' };
+        const f = findFaculty(id);
+        return { url: f ? f.svg : '', kind: 'svg' };
+      }
+
+      function photoUrl(id) {
+        return photoMeta(id).url;
+      }
+
+      function courseFaculty(code) {
+        return (COURSE_TEACHERS[code] || []).map(findFaculty).filter(Boolean);
+      }
+
+      function stats() {
+        const transferCr = TRANSFERRED.reduce((s, c) => s + c.credits, 0);
+        let passCr = 0, pts = 0, grCr = 0, grCnt = 0;
+        let pass = 0, study = 0, idle = 0, fail = 0;
+
+        CURRICULUM.forEach(c => {
+          const st = store.statuses[c.code] || 'not_started';
+          const gr = store.grades[c.code] || '';
+          if (st === 'passed') {
+            pass++;
+            passCr += c.credits;
+            if (gr && POINTS[gr] != null && c.credits > 0) {
+              pts += POINTS[gr] * c.credits;
+              grCr += c.credits;
+              grCnt++;
+            }
+          } else if (st === 'studying') {
+            study++;
+          } else if (st === 'failed') {
+            fail++;
+            if (gr === 'F' && c.credits > 0) {
+              grCr += c.credits;
+              grCnt++;
+            }
+          } else {
+            idle++;
+          }
+        });
+
+        return {
+          earned: transferCr + passCr,
+          passCr,
+          gpax: grCr > 0 ? (pts / grCr).toFixed(2) : '0.00',
+          grCnt,
+          pass, study, idle, fail
+        };
+      }
+
+      function statusPill(code) {
+        const st = store.statuses[code] || 'not_started';
+        const gr = store.grades[code] || '';
+        if (st === 'passed') return `<span class="pill pill-ok">ผ่านแล้ว ${gr ? `(${gr})` : ''}</span>`;
+        if (st === 'studying') return `<span class="pill pill-warn">กำลังเรียน/รอเกรด</span>`;
+        if (st === 'failed') return `<span class="pill pill-err">ไม่ผ่าน ${gr ? `(${gr})` : ''}</span>`;
+        return `<span class="pill pill-dim">ยังไม่เรียน</span>`;
+      }
+
+      function renderDashboard() {
+        const s = stats();
+        const pct = Math.min(100, Math.round((s.earned / 122) * 100));
+        $('ringArc').style.strokeDashoffset = 150.8 - (pct / 100) * 150.8;
+        $('ringPct').textContent = `${pct}%`;
+        $('kpiEarned').textContent = s.earned;
+        $('kpiPassedCr').textContent = s.passCr;
+        $('kpiGpax').textContent = s.gpax;
+        $('kpiGraded').textContent = s.grCnt;
+
+        $('cntPass').textContent = s.pass;
+        $('cntStudy').textContent = s.study;
+        $('cntIdle').textContent = s.idle;
+        $('cntFail').textContent = s.fail;
+
+        const focus = CURRICULUM.find(c => c.code === '5105302') || CURRICULUM.find(c => store.statuses[c.code] === 'studying') || CURRICULUM[0];
+        const blk = store.blocks[focus.code] || {};
+        const teachers = courseFaculty(focus.code);
+
+        $('focusCard').innerHTML = `
+          <div class="row-between">
+            <span class="pill pill-accent">กำลังเรียนช่วงนี้</span>
+            <button class="btn btn-sm" data-action="edit" data-code="${focus.code}">แก้ไข</button>
+          </div>
+          <div class="row-start" style="margin-top: 10px;">
+            <div style="min-width: 0; flex: 1;">
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span class="mono" style="font-size: 12px; font-weight: 700; color: #fbbf24;">${focus.code}</span>
+                <span class="mono" style="font-size: 11px; color: var(--ink-sub);">${focus.detail}</span>
+              </div>
+              <h3 style="margin: 2px 0 6px; font-size: 15px; font-weight: 700;">${focus.name}</h3>
+              <div class="meta-line primary">${blk.dates || 'ตามกำหนดการสาขา'}</div>
+              <div class="meta-line">${blk.start || '07:00'} – ${blk.end || '19:00'} น. • ห้อง ${blk.room || 'สป13-302'} (${blk.section || 'หมู่ 30'})</div>
+            </div>
+            <div style="display: flex; gap: 6px; flex-shrink: 0;">
+              ${teachers.map(t => `<img src="${photoUrl(t.id)}" onerror="this.src='${t.svg}'" alt="${t.name}" class="avatar-sm" />`).join('')}
+            </div>
+          </div>
+          <div class="item-foot">
+            <span class="ellipsis">${blk.instructor || ''}</span>
+            <button data-action="tab" data-tab="schedule" style="background: none; border: none; color: #fbbf24; font-weight: 700; cursor: pointer; flex-shrink: 0;">ดูตารางเรียน →</button>
+          </div>
+        `;
+
+        $('termBars').innerHTML = TERMS.map(tk => {
+          const [y, t] = tk.split('-');
+          const list = CURRICULUM.filter(c => `${c.year}-${c.term}` === tk);
+          const total = list.length;
+          const pass = list.filter(c => store.statuses[c.code] === 'passed').length;
+          const study = list.filter(c => store.statuses[c.code] === 'studying').length;
+          const pH = total ? Math.round((pass / total) * 100) : 0;
+          const sH = total ? Math.round((study / total) * 100) : 0;
+
+          return `
+            <button class="bar-col" data-action="filter-term" data-term="${tk}">
+              <span class="mono" style="font-size: 10px; color: var(--ink-sub); margin-bottom: 4px;">${pass}/${total}</span>
+              <div class="bar-track">
+                ${sH > 0 ? `<div style="height: ${sH}%; background: var(--warn); width: 100%;"></div>` : ''}
+                ${pH > 0 ? `<div style="height: ${pH}%; background: var(--ok); width: 100%;"></div>` : ''}
+              </div>
+              <span class="mono" style="font-size: 10px; font-weight: 600; margin-top: 6px;">${t}/${y.slice(2)}</span>
+            </button>
+          `;
+        }).join('');
+
+        $('transferBody').innerHTML = TRANSFERRED.map((c, idx) => `
+          <div class="transfer-row">
+            <div style="min-width: 0;">
+              <div style="display: flex; gap: 6px; align-items: center;">
+                <span class="mono" style="font-size: 11px; font-weight: 700; color: #86efac;">${c.code}</span>
+                <span class="mono" style="font-size: 10px; color: var(--ink-dim);">${c.detail}</span>
+              </div>
+              <div class="ellipsis" style="font-size: 12px;">${idx + 1}. ${c.name}</div>
+            </div>
+            <span class="pill pill-ok mono">T</span>
+          </div>
+        `).join('');
+      }
+
+      function renderPlan() {
+        const items = [{ key: 'all', label: 'ทุกเทอม (30)' }, ...TERMS.map(tk => {
+          const [y, t] = tk.split('-');
+          return { key: tk, label: `เทอม ${t}/${y}` };
+        })];
+
+        $('termChips').innerHTML = items.map(p => `
+          <button class="chip ${nav.term === p.key ? 'active' : ''}" data-action="set-term" data-term="${p.key}">${p.label}</button>
+        `).join('');
+
+        document.querySelectorAll('#statusChips .chip').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.status === nav.status);
+        });
+
+        const q = ($('searchBox').value || '').trim().toLowerCase();
+        const rows = CURRICULUM.filter(c => {
+          const tk = `${c.year}-${c.term}`;
+          const st = store.statuses[c.code] || 'not_started';
+          const blk = store.blocks[c.code] || {};
+          if (nav.term !== 'all' && tk !== nav.term) return false;
+          if (nav.status !== 'all' && st !== nav.status) return false;
+          if (q && !`${c.code} ${c.name} ${blk.instructor || ''} ${blk.note || ''}`.toLowerCase().includes(q)) return false;
+          return true;
+        });
+
+        if (!rows.length) {
+          $('planContainer').innerHTML = `<div class="card" style="text-align: center; padding: 28px; color: var(--ink-sub);">ไม่พบรายวิชาที่ค้นหา</div>`;
+          return;
+        }
+
+        const byTerm = {};
+        rows.forEach(c => {
+          const tk = `${c.year}-${c.term}`;
+          (byTerm[tk] = byTerm[tk] || []).push(c);
+        });
+
+        $('planContainer').innerHTML = Object.entries(byTerm).map(([tk, list]) => {
+          const [y, t] = tk.split('-');
+          const cr = list.reduce((sum, c) => sum + c.credits, 0);
+          return `
+            <div class="vstack-sm">
+              <div class="row-between" style="padding: 0 2px;">
+                <span style="font-size: 12px; font-weight: 700;">ภาคเรียนที่ ${t}/${y}</span>
+                <span class="mono" style="font-size: 11px; color: var(--ink-sub);">${list.length} วิชา • ${cr} หน่วยกิต</span>
+              </div>
+              ${list.map(c => {
+                const st = store.statuses[c.code] || 'not_started';
+                const blk = store.blocks[c.code] || {};
+                const dot = st === 'passed' ? 'dot-ok' : st === 'studying' ? 'dot-warn' : st === 'failed' ? 'dot-err' : 'dot-dim';
+                return `
+                  <div class="item-card" data-action="edit" data-code="${c.code}">
+                    <div class="row-start">
+                      <div style="display: flex; align-items: flex-start; gap: 10px; min-width: 0;">
+                        <button class="cycle-btn" data-action="cycle" data-code="${c.code}" title="เปลี่ยนสถานะด่วน">
+                          <span class="dot ${dot}"></span>
+                        </button>
+                        <div style="min-width: 0;">
+                          <div style="display: flex; align-items: center; gap: 6px;">
+                            <span class="mono" style="font-size: 12px; font-weight: 700; color: #fbbf24;">${c.code}</span>
+                            <span class="mono" style="font-size: 11px; color: var(--ink-dim);">${c.detail}</span>
+                          </div>
+                          <div style="font-size: 13px; font-weight: 700; margin-top: 2px;">${c.name}</div>
+                        </div>
+                      </div>
+                      ${statusPill(c.code)}
+                    </div>
+                    ${(blk.instructor || blk.dates || blk.note) ? `
+                      <div style="margin-top: 8px; padding-top: 8px; padding-left: 34px; border-top: 1px solid var(--line); font-size: 11px; color: var(--ink-sub);">
+                        ${blk.instructor ? `<div class="ellipsis" style="color: var(--ink);">ผู้สอน: ${blk.instructor}</div>` : ''}
+                        ${blk.dates ? `<div class="ellipsis">วันเรียน: ${blk.dates}</div>` : ''}
+                        ${blk.note ? `<div class="ellipsis" style="color: #fde047;">${blk.note}</div>` : ''}
+                      </div>
+                    ` : ''}
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          `;
+        }).join('');
+      }
+
+      function renderSchedule() {
+        const tk = $('termSelect').value;
+        const [y, t] = tk.split('-');
+        const list = CURRICULUM.filter(c => `${c.year}-${c.term}` === tk);
+
+        $('scheduleList').innerHTML = list.map((c, i) => {
+          const blk = store.blocks[c.code] || {};
+          const teachers = courseFaculty(c.code);
+          const pair = teachers.length > 1;
+          const cls = pair ? 'avatar-pair' : 'avatar-lg';
+
+          return `
+            <div class="item-card" data-action="edit" data-code="${c.code}">
+              <div class="row-between" style="margin-bottom: 10px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="tag">ชุดที่ ${i + 1}</span>
+                  <span class="mono" style="font-size: 13px; font-weight: 700;">${c.code}</span>
+                  <span class="mono" style="font-size: 11px; color: var(--ink-dim);">${c.detail}</span>
+                </div>
+                ${statusPill(c.code)}
+              </div>
+
+              <div class="row-start">
+                <div style="min-width: 0; flex: 1;">
+                  <h3 style="margin: 0 0 6px; font-size: 15px; font-weight: 700; line-height: 1.35;">${c.name}</h3>
+                  <div class="meta-line primary">วันเรียน: ${blk.dates || 'ยังไม่กำหนด (แตะเพื่อแก้ไข)'}</div>
+                  <div class="meta-line">เวลา: ${blk.start && blk.end ? `${blk.start} – ${blk.end} น.` : 'ตามนัดหมาย'} • ห้อง <strong style="color: var(--ink);">${blk.room || 'สป13-302'}</strong> ${blk.section ? `(${blk.section})` : ''}</div>
+                </div>
+
+                ${teachers.length ? `
+                  <div style="display: flex; gap: 6px; flex-shrink: 0;">
+                    ${teachers.map(f => `
+                      <div class="avatar-btn" data-action="upload" data-id="${f.id}">
+                        <img src="${photoUrl(f.id)}" onerror="this.src='${f.svg}'" alt="${f.name}" class="${cls}" />
+                        <span class="cam-dot">
+                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                            <circle cx="12" cy="13" r="4"></circle>
+                          </svg>
+                        </span>
+                      </div>
+                    `).join('')}
+                  </div>
+                ` : ''}
+              </div>
+
+              <div class="item-foot">
+                <span class="ellipsis">ผู้สอน: <strong style="color: var(--ink); font-weight: 500;">${blk.instructor || 'ไม่ระบุ'}</strong></span>
+                ${blk.note ? `<span style="color: #fde047; font-weight: 600; flex-shrink: 0;">${blk.note}</span>` : ''}
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        const hols = HOLIDAYS[tk] || [];
+        $('holidayPanel').innerHTML = hols.length ? `
+          <div class="holiday-box">
+            <strong>วันงดการเรียนการสอนประจำเทอม ${t}/${y}</strong>
+            <ul>${hols.map(h => `<li>${h}</li>`).join('')}</ul>
+          </div>
+        ` : '';
+      }
+
+      function renderFaculty() {
+        $('facultyList').innerHTML = FACULTY.map(f => {
+          const meta = photoMeta(f.id);
+          const tag = meta.kind === 'local'
+            ? `<span class="pill pill-ok" style="font-size: 9px;">รูปในเครื่อง</span>`
+            : meta.kind === 'bundled'
+              ? `<span class="pill pill-accent" style="font-size: 9px;">ไฟล์โปรเจกต์</span>`
+              : `<span class="pill pill-dim" style="font-size: 9px;">ภาพเริ่มต้น</span>`;
+
+          return `
+            <div class="card row-between" style="padding: 12px 14px;">
+              <div style="display: flex; align-items: center; gap: 12px; min-width: 0;">
+                <img src="${meta.url}" onerror="this.src='${f.svg}'" alt="${f.name}" class="avatar-md" />
+                <div style="min-width: 0;">
+                  <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+                    <span style="font-size: 13px; font-weight: 700;">${f.name}</span>
+                    ${tag}
+                  </div>
+                  <div style="font-size: 11px; color: var(--ink-sub); margin-top: 2px;">${f.role}</div>
+                  <div class="mono" style="font-size: 10px; color: var(--ink-dim); margin-top: 3px;">ไฟล์: ${f.file}.jpg</div>
+                </div>
+              </div>
+
+              <div class="vstack-sm" style="gap: 5px; flex-shrink: 0;">
+                <button class="btn btn-sm" data-action="upload" data-id="${f.id}">เปลี่ยนรูป</button>
+                ${meta.kind === 'local' ? `<button class="btn btn-sm" data-action="clear-photo" data-id="${f.id}">ใช้ไฟล์หลัก</button>` : ''}
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      function renderAll() {
+        renderDashboard();
+        renderPlan();
+        renderSchedule();
+        renderFaculty();
+      }
+
+      function openEdit(code) {
+        const c = CURRICULUM.find(item => item.code === code);
+        if (!c) return;
+        nav.editCode = code;
+        nav.draftStatus = store.statuses[code] || 'not_started';
+        nav.draftGrade = store.grades[code] || 'A';
+
+        $('mCode').textContent = c.code;
+        $('mDetail').textContent = c.detail;
+        $('mName').textContent = c.name;
+
+        const blk = store.blocks[code] || {};
+        $('fDates').value = blk.dates || '';
+        $('fStart').value = blk.start || '07:00';
+        $('fEnd').value = blk.end || '19:00';
+        $('fRoom').value = blk.room || 'สป13-302';
+        $('fSection').value = blk.section || '';
+        $('fInstructor').value = blk.instructor || '';
+        $('fNote').value = blk.note || '';
+
+        syncStatusUI();
+        renderModalTeachers(code);
+        $('editModal').classList.remove('hidden');
+      }
+
+      function closeEdit() {
+        $('editModal').classList.add('hidden');
+        nav.editCode = null;
+      }
+
+      function syncStatusUI() {
+        document.querySelectorAll('#mStatusGrid .seg-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.status === nav.draftStatus);
+        });
+
+        const box = $('mGradeBox');
+        const row = $('mGradeRow');
+        if (nav.draftStatus === 'passed' || nav.draftStatus === 'failed') {
+          box.classList.remove('hidden');
+          const list = nav.draftStatus === 'passed' ? ['A', 'B+', 'B', 'C+', 'C', 'D+', 'D', 'S'] : ['F', 'W'];
+          if (!list.includes(nav.draftGrade)) nav.draftGrade = list[0];
+          row.innerHTML = list.map(g => `
+            <button type="button" class="grade-chip ${nav.draftGrade === g ? 'active' : ''}" data-action="pick-grade" data-grade="${g}">${g}</button>
+          `).join('');
+        } else {
+          box.classList.add('hidden');
+        }
+      }
+
+      function renderModalTeachers(code) {
+        const list = courseFaculty(code);
+        $('mTeacherBox').innerHTML = list.length ? `
+          <div class="vstack-sm" style="border-top: 1px solid var(--line); padding-top: 10px;">
+            <span class="label" style="margin: 0;">รูปอาจารย์ประจำวิชา</span>
+            ${list.map(f => `
+              <div class="row-between" style="padding: 8px 10px; border-radius: 10px; background: var(--bg); border: 1px solid var(--line);">
+                <div style="display: flex; align-items: center; gap: 10px; min-width: 0;">
+                  <img src="${photoUrl(f.id)}" onerror="this.src='${f.svg}'" style="width: 36px; height: 36px; border-radius: 8px; object-fit: cover; object-position: top;" />
+                  <div style="min-width: 0;">
+                    <div class="ellipsis" style="font-size: 12px; font-weight: 600;">${f.name}</div>
+                    <div class="mono" style="font-size: 10px; color: var(--ink-dim);">${f.file}.jpg</div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-sm" data-action="upload" data-id="${f.id}">เปลี่ยนรูป</button>
+              </div>
+            `).join('')}
+          </div>
+        ` : '';
+      }
+
+      function saveEdit() {
+        const code = nav.editCode;
+        if (!code) return;
+        store.statuses[code] = nav.draftStatus;
+        if (nav.draftStatus === 'passed' || nav.draftStatus === 'failed') {
+          store.grades[code] = nav.draftGrade;
+        } else {
+          delete store.grades[code];
+        }
+
+        store.blocks[code] = {
+          dates: $('fDates').value.trim(),
+          start: $('fStart').value,
+          end: $('fEnd').value,
+          room: $('fRoom').value.trim(),
+          section: $('fSection').value.trim(),
+          instructor: $('fInstructor').value.trim(),
+          note: $('fNote').value.trim()
+        };
+
+        save();
+        closeEdit();
+        renderAll();
+        notify('บันทึกข้อมูลเรียบร้อย');
+      }
+
+      function loadImageSafe(src, fallback) {
+        return new Promise(resolve => {
+          if (!src) return resolve(null);
+          const img = new Image();
+          img.crossOrigin = 'anonymous';
+          img.onload = () => resolve(img);
+          img.onerror = () => {
+            if (fallback && src !== fallback) {
+              const fb = new Image();
+              fb.onload = () => resolve(fb);
+              fb.onerror = () => resolve(null);
+              fb.src = fallback;
+            } else {
+              resolve(null);
+            }
+          };
+          img.src = src;
+        });
+      }
+
+      function drawPortrait(ctx, img, x, y, size, r) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.roundRect(x, y, size, size, r);
+        ctx.clip();
+        if (img) {
+          const s = Math.max(size / (img.width || size), size / (img.height || size));
+          const w = (img.width || size) * s;
+          const h = (img.height || size) * s;
+          ctx.drawImage(img, x + (size - w) / 2, y, w, h);
+        } else {
+          ctx.fillStyle = '#242832';
+          ctx.fillRect(x, y, size, size);
+        }
+        ctx.restore();
+
+        ctx.save();
+        ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.roundRect(x, y, size, size, r);
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      async function exportPng() {
+        const btn = $('pngBtn');
+        btn.disabled = true;
+        notify('กำลังสร้างรูปตารางเรียน...');
+
+        try {
+          const tk = $('termSelect').value;
+          const [y, t] = tk.split('-');
+          const list = CURRICULUM.filter(c => `${c.year}-${c.term}` === tk);
+          const hols = HOLIDAYS[tk] || [];
+
+          const photos = {};
+          for (const c of list) {
+            const ts = courseFaculty(c.code);
+            photos[c.code] = await Promise.all(ts.map(f => loadImageSafe(photoUrl(f.id), f.svg)));
+          }
+
+          const W = 1080;
+          const topH = 236;
+          const rowH = 194;
+          const gap = 18;
+          const holH = hols.length ? (70 + hols.length * 32) : 0;
+          const footH = 76;
+          const H = topH + list.length * (rowH + gap) + holH + footH;
+
+          const canvas = $('pngCanvas');
+          canvas.width = W;
+          canvas.height = H;
+          const ctx = canvas.getContext('2d');
+
+          ctx.fillStyle = '#090b0f';
+          ctx.fillRect(0, 0, W, H);
+
+          ctx.fillStyle = '#f59e0b';
+          ctx.fillRect(0, 0, W, 10);
+
+          ctx.fillStyle = '#171c26';
+          ctx.beginPath();
+          ctx.roundRect(52, 40, 380, 38, 10);
+          ctx.fill();
+          ctx.fillStyle = '#fcd34d';
+          ctx.font = 'bold 19px "IBM Plex Sans Thai", sans-serif';
+          ctx.fillText('ภาคพิเศษวันอาทิตย์ • รุ่น สป69/16', 70, 65);
+
+          ctx.fillStyle = '#f8fafc';
+          ctx.font = 'bold 42px "IBM Plex Sans Thai", sans-serif';
+          ctx.fillText(`ตารางเรียนภาคเรียนที่ ${t}/${y}`, 52, 126);
+
+          const cr = list.reduce((s, c) => s + c.credits, 0);
+          ctx.fillStyle = '#94a3b8';
+          ctx.font = '23px "IBM Plex Sans Thai", sans-serif';
+          ctx.fillText(`สาขาวิชาเทคโนโลยีไฟฟ้า มรภ.ธนบุรี (สมุทรปราการ) • ${list.length} วิชา (${cr} หน่วยกิต)`, 52, 166);
+
+          ctx.fillStyle = '#e2e8f0';
+          ctx.font = '20px "IBM Plex Sans Thai", sans-serif';
+          ctx.fillText('พักกลางวัน 12:00 – 13:00 น. • อาจารย์ที่ปรึกษา: อ.ชาญฉจิต วรรณนุรักษ์', 52, 200);
+
+          ctx.strokeStyle = 'rgba(148,163,184,0.14)';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(52, 220);
+          ctx.lineTo(W - 52, 220);
+          ctx.stroke();
+
+          const accents = ['#f59e0b', '#10b981', '#eab308', '#38bdf8', '#a855f7', '#fb7185'];
+          list.forEach((c, idx) => {
+            const ry = topH + idx * (rowH + gap);
+            const blk = store.blocks[c.code] || {};
+            const st = store.statuses[c.code] || 'not_started';
+            const gr = store.grades[c.code] || '';
+            const col = accents[idx % accents.length];
+            const imgs = photos[c.code] || [];
+
+            ctx.fillStyle = '#11151d';
+            ctx.beginPath();
+            ctx.roundRect(52, ry, W - 104, rowH, 20);
+            ctx.fill();
+            ctx.strokeStyle = 'rgba(148,163,184,0.12)';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.fillStyle = col;
+            ctx.beginPath();
+            ctx.roundRect(52, ry + 18, 7, rowH - 36, 4);
+            ctx.fill();
+
+            const pair = imgs.length > 1;
+            const size = pair ? 94 : 114;
+            const padR = 76;
+            const pW = !imgs.length ? 0 : (pair ? size * 2 + 14 : size);
+            const maxW = W - 104 - 44 - pW - (imgs.length ? 22 : 0);
+
+            ctx.fillStyle = col;
+            ctx.font = 'bold 22px "JetBrains Mono", monospace';
+            ctx.fillText(`${c.code}  ${c.detail}`, 82, ry + 38);
+
+            ctx.fillStyle = '#f3f4f6';
+            ctx.font = 'bold 27px "IBM Plex Sans Thai", sans-serif';
+            let name = c.name;
+            while (ctx.measureText(name).width > maxW && name.length > 10) name = name.slice(0, -2) + '…';
+            ctx.fillText(name, 82, ry + 76);
+
+            ctx.fillStyle = '#fde047';
+            ctx.font = 'bold 21px "IBM Plex Sans Thai", sans-serif';
+            ctx.fillText(`วันเรียน: ${blk.dates || 'ตามกำหนดการสาขา'}`, 82, ry + 112);
+
+            ctx.fillStyle = '#d1d5db';
+            ctx.font = '20px "IBM Plex Sans Thai", sans-serif';
+            const timeStr = blk.start && blk.end ? `${blk.start} – ${blk.end} น.` : 'ตามนัดหมาย';
+            ctx.fillText(`เวลา: ${timeStr}  •  ห้อง ${blk.room || 'สป13-302'} ${blk.section ? `(${blk.section})` : ''}`, 82, ry + 144);
+
+            ctx.fillStyle = '#9ca3af';
+            ctx.font = '20px "IBM Plex Sans Thai", sans-serif';
+            const stLabel = st === 'passed' ? `ผ่านแล้ว (${gr})` : st === 'studying' ? 'กำลังเรียน/ส่งเกรด' : '';
+            let inst = `ผู้สอน: ${blk.instructor || 'ไม่ระบุ'}${stLabel ? `  •  ${stLabel}` : ''}`;
+            while (ctx.measureText(inst).width > maxW && inst.length > 12) inst = inst.slice(0, -2) + '…';
+            ctx.fillText(inst, 82, ry + 174);
+
+            if (imgs.length) {
+              const py = ry + Math.round((rowH - size) / 2);
+              if (pair) {
+                const x2 = W - padR - size;
+                const x1 = x2 - size - 14;
+                drawPortrait(ctx, imgs[0], x1, py, size, 16);
+                drawPortrait(ctx, imgs[1], x2, py, size, 16);
+              } else {
+                drawPortrait(ctx, imgs[0], W - padR - size, py, size, 18);
+              }
+            }
+          });
+
+          if (hols.length) {
+            const hy = topH + list.length * (rowH + gap) + 6;
+            ctx.fillStyle = 'rgba(239, 68, 68, 0.12)';
+            ctx.beginPath();
+            ctx.roundRect(52, hy, W - 104, holH - 12, 16);
+            ctx.fill();
+
+            ctx.fillStyle = '#fca5a5';
+            ctx.font = 'bold 20px "IBM Plex Sans Thai", sans-serif';
+            ctx.fillText('วันงดการเรียนการสอน:', 74, hy + 32);
+
+            ctx.fillStyle = '#fecaca';
+            ctx.font = '19px "IBM Plex Sans Thai", sans-serif';
+            hols.forEach((h, i) => ctx.fillText(`• ${h}`, 74, hy + 64 + i * 30));
+          }
+
+          ctx.fillStyle = '#6b7280';
+          ctx.font = '18px "IBM Plex Sans Thai", sans-serif';
+          ctx.fillText('แผนการเรียนและตารางสอน เทคโนโลยีไฟฟ้า รุ่น สป69/16', 52, H - 28);
+
+          const a = document.createElement('a');
+          a.download = `ตารางเรียน_สป69-16_เทอม_${t}-${y}.png`;
+          a.href = canvas.toDataURL('image/png');
+          a.click();
+          notify('บันทึกรูปตารางเรียนเรียบร้อย');
+        } catch (err) {
+          console.error(err);
+          notify('เกิดข้อผิดพลาดในการสร้างรูป');
+        } finally {
+          btn.disabled = false;
+        }
+      }
+
+      function setTab(tab) {
+        nav.tab = tab;
+        ['dashboard', 'plan', 'schedule', 'teachers'].forEach(t => {
+          $(`view-${t}`).classList.toggle('hidden', t !== tab);
+        });
+        document.querySelectorAll('.tab').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.tab === tab);
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      document.addEventListener('click', e => {
+        const el = e.target.closest('[data-action]');
+        if (!el) return;
+        const act = el.dataset.action;
+
+        if (act === 'tab') {
+          setTab(el.dataset.tab);
+        } else if (act === 'filter-status') {
+          nav.term = 'all';
+          nav.status = el.dataset.status;
+          renderPlan();
+          setTab('plan');
+        } else if (act === 'filter-term') {
+          nav.term = el.dataset.term;
+          nav.status = 'all';
+          renderPlan();
+          setTab('plan');
+        } else if (act === 'set-term') {
+          nav.term = el.dataset.term;
+          renderPlan();
+        } else if (act === 'set-status') {
+          nav.status = el.dataset.status;
+          renderPlan();
+        } else if (act === 'toggle-transfer') {
+          const body = $('transferBody');
+          const open = body.classList.contains('hidden');
+          body.classList.toggle('hidden', !open);
+          $('transferChevron').style.transform = open ? 'rotate(180deg)' : 'rotate(0deg)';
+        } else if (act === 'cycle') {
+          e.stopPropagation();
+          const code = el.dataset.code;
+          const order = ['not_started', 'studying', 'passed', 'failed'];
+          const next = order[(order.indexOf(store.statuses[code] || 'not_started') + 1) % order.length];
+          store.statuses[code] = next;
+          if (next === 'passed' && !store.grades[code]) store.grades[code] = 'A';
+          save();
+          renderAll();
+          notify(`อัปเดตสถานะ ${code} แล้ว`);
+        } else if (act === 'edit') {
+          openEdit(el.dataset.code);
+        } else if (act === 'close-modal') {
+          closeEdit();
+        } else if (act === 'close-modal-bg') {
+          if (e.target === $('editModal')) closeEdit();
+        } else if (act === 'pick-status') {
+          nav.draftStatus = el.dataset.status;
+          syncStatusUI();
+        } else if (act === 'pick-grade') {
+          nav.draftGrade = el.dataset.grade;
+          syncStatusUI();
+        } else if (act === 'save-modal') {
+          saveEdit();
+        } else if (act === 'upload') {
+          e.stopPropagation();
+          nav.uploadId = el.dataset.id;
+          const inp = $('imgInput');
+          inp.value = '';
+          inp.click();
+        } else if (act === 'clear-photo') {
+          delete store.photos[el.dataset.id];
+          save();
+          renderAll();
+          notify('คืนค่ารูปภาพหลักเรียบร้อย');
+        } else if (act === 'recover-photos') {
+          scanLegacyPhotos(true);
+        } else if (act === 'export-png') {
+          exportPng();
+        } else if (act === 'export-json') {
+          const blob = new Blob([JSON.stringify(store, null, 2)], { type: 'application/json' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `ee_sp69_16_${new Date().toISOString().slice(0, 10)}.json`;
+          a.click();
+          URL.revokeObjectURL(url);
+          notify('สำรองข้อมูลเรียบร้อย');
+        } else if (act === 'import-json') {
+          const inp = $('jsonInput');
+          inp.value = '';
+          inp.click();
+        } else if (act === 'open-reset') {
+          $('resetModal').classList.remove('hidden');
+        } else if (act === 'close-reset') {
+          $('resetModal').classList.add('hidden');
+        } else if (act === 'do-reset') {
+          localStorage.removeItem(STORE_KEY);
+          store = defaultStore();
+          save();
+          $('resetModal').classList.add('hidden');
+          renderAll();
+          notify('รีเซ็ตข้อมูลเรียบร้อย');
+        } else if (act === 'save-icon') {
+          if (window._iconUrl) {
+            const a = document.createElement('a');
+            a.href = window._iconUrl;
+            a.download = 'icon-ee-sp69.png';
+            a.click();
+            notify('บันทึกไฟล์ไอคอนเรียบร้อย');
+          }
+        }
+      });
+
+      $('searchBox').addEventListener('input', renderPlan);
+      $('termSelect').addEventListener('change', renderSchedule);
+
+      $('imgInput').addEventListener('change', e => {
+        const file = e.target.files && e.target.files[0];
+        const id = nav.uploadId;
+        if (!file || !id) return;
+
+        const reader = new FileReader();
+        reader.onload = ev => {
+          const img = new Image();
+          img.onload = () => {
+            const max = 380;
+            let w = img.width, h = img.height;
+            if (w > h && w > max) { h = Math.round((h * max) / w); w = max; }
+            else if (h >= w && h > max) { w = Math.round((w * max) / h); h = max; }
+
+            const c = document.createElement('canvas');
+            c.width = w;
+            c.height = h;
+            c.getContext('2d').drawImage(img, 0, 0, w, h);
+
+            store.photos[id] = c.toDataURL('image/jpeg', 0.86);
+            save();
+            renderAll();
+            if (nav.editCode) renderModalTeachers(nav.editCode);
+            const f = findFaculty(id);
+            notify(`เปลี่ยนรูป ${f ? f.name : 'อาจารย์'} เรียบร้อย`);
+          };
+          img.src = ev.target.result;
+        };
+        reader.readAsDataURL(file);
+      });
+
+      $('jsonInput').addEventListener('change', e => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = ev => {
+          try {
+            const data = JSON.parse(ev.target.result);
+            if (data && typeof data === 'object') {
+              store = {
+                statuses: data.statuses || {},
+                grades: data.grades || {},
+                blocks: data.blocks || {},
+                photos: data.photos || data.teacherPhotos || {}
+              };
+              save();
+              renderAll();
+              notify('กู้คืนข้อมูลสำเร็จ');
+            }
+          } catch (_) {
+            notify('ไฟล์สำรองไม่ถูกต้อง');
+          }
+        };
+        reader.readAsText(file);
+      });
+
+      buildAppIcon();
+      load();
+      renderAll();
+      discoverProjectPhotos();
+    })();
+  </script>
+</body>
+</html>
